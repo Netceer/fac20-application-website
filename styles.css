@@ -107,3 +107,27 @@ img {
     margin: auto;
 
 }
+
+#play-pause-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 3rem;
+    color: white;
+    padding: 0.5rem 0.8rem 0.5rem 1rem;
+    transition: ease 0.5s;
+    z-index: 2;
+    cursor: pointer;
+    border-radius: 0rem 0rem 1rem 0rem;
+   
+}
+
+#play-pause-button:hover {
+    background-color: black;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+#play-pause-button:hover .fas {
+    opacity: 1;
+}
