@@ -33,12 +33,13 @@ html {
     border: solid black 1px;
 }
 .image-and-caption {
-    /* width: 100%;
-    height: 100%; */
+    display: hidden;
+    /* opacity:0; */
 }
 img {
-    /* width: 100%;
-    height: 100%; */
+    /* need to set to 100% otherwise all images will appear due to difference in sizes */
+    width: 100%;
+    height: 100%;
 }
 
 .caption-text {
@@ -101,7 +102,8 @@ img {
     border: solid red 2px;
 }
 
-/* why do we need a holder for caption text? Revisit later */
+/* why do we need a holder for caption text? Revisit later
+placeholder is to display the caption text for each image, same way image holder displays image */
 .caption-container .caption-text {
     display: block;
     margin: auto;
