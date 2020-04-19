@@ -52,7 +52,8 @@ img {
     position: absolute;
     /* put buttons above images */
     z-index: 1;
-    transition: ease 0.5s;
+    /* transition property is shorthand for property, duration, timing-function and delay, default values are all, 0s,ease,0s */
+    transition: 0.5s ease;
     top: 45%;
     /* top counts the top edge of the element so to center the middle of the element,
      have to shift it up by 50% on itself to achieve true centering */
@@ -132,4 +133,34 @@ placeholder is to display the caption text for each image, same way image holder
 
 #play-pause-button:hover .fas {
     opacity: 1;
+}
+
+#dots-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    padding-top: 2rem;
+    border: solid green 1px;
+}
+
+.dots {
+    width: 2rem;
+    height: 2rem;
+    /* border radius 50% to turn into circles */
+    border-radius: 50%;
+    /* space between the dots */
+    margin: 0 0.5rem;
+    cursor: pointer;
+    /* have to use background color because the spam elements have no content in them so color wont color anything */
+    background-color: #bbb;
+    transition: 0.5s ease;
+    border: solid red 1px;
+    transform: translateY(-25%);
+}
+
+.dots:hover, .dots.active {
+    background-color: #717171; /* dark grey colour 
 }

@@ -15,5 +15,27 @@ function initCarousel() {
 
     captionText = document.querySelector(".caption-container .caption-text");
     captionText.innerText = slides[slidesIndex].querySelector(".caption-text").innerText;
+
+    // setting up the navigation dots
+    dots = [];
+    let dotsContainer = document.getElementById("dots-container");
+
+    // creating the same number of dots as number of image slides
+    for(let i = 0; i < slides.length; i++){
+        // creating new html span element
+        let dot = document.createElement("span");
+        // adding the class="dots" to newly created span elements
+        dot.classList.add("dots");
+        // appending the .dots to the #dots-container element
+        dotsContainer.append(dot);
+        // pushing the .dots span elements into the dots array
+        dots.push(dot);
+
+    }
+
+    // adds the class .active to the currently shown slide number to colour it dark grey
+    dots[slidesIndex].classList.add("active")
 }
-initCarousel()
+initCarousel().dots:first-child {
+    /* margin-left: 0; */
+}
