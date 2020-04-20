@@ -31,10 +31,14 @@ html {
     /* hides rest of the images that are overflowing */
     overflow: hidden;
     border: solid black 1px;
+    /* position: relative; */
 }
 .image-and-caption {
-    display: hidden;
-    /* opacity:0; */
+    /* display: hidden; */
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
 }
 img {
     /* need to set to 100% otherwise all images will appear due to difference in sizes */
@@ -162,5 +166,86 @@ placeholder is to display the caption text for each image, same way image holder
 }
 
 .dots:hover, .dots.active {
-    background-color: #717171; /* dark grey colour 
+    background-color: #717171; /* dark grey colour */
+}
+
+/* Creating a class for an animation to move current image to the left out of view */
+.move-current-slide-left {
+    animation-name: move-current-left;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+/* Creating a class for an animation to move next image to the left into view */
+.move-next-slide-left {
+    animation-name: move-next-left;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+
+
+/* after naming the animation, the keyframes is governs the animation details 
+for moving current slide to the left. CANT USE DISPLAY PROPERTY FOR ANIMATIONS!! Have to use opacity or height 0 for this method */
+@keyframes move-current-left {
+    from{
+        margin-left: 0;
+        opacity: 1;
+    }
+    to{
+        margin-left: -100%;
+        /* margin-right: 100%; */
+        opacity: 1;
+    }
+}
+
+@keyframes move-next-left {
+    from{
+        margin-left: 100%;
+        opacity: 1;
+    }
+    to{
+        margin-left: 0;
+        opacity: 1;
+    }
+}
+
+/* Creating a class for an animation to move current image to the right out of view */
+.move-current-slide-right {
+    animation-name: move-current-right;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+/* Creating a class for an animation to move next image to the right into view */
+.move-next-slide-right {
+    animation-name: move-next-right;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes move-current-right {
+    from{
+        margin-left: 0;
+        opacity: 1;
+    }
+    to{
+        margin-left: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes move-next-right {
+    from{
+        margin-left: -100%;
+        opacity: 1;
+    }
+    to{
+        margin-left: 0;
+        opacity: 1;
+    }
 }

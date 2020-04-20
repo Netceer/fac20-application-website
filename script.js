@@ -9,9 +9,10 @@ function initCarousel() {
     slides = document.getElementsByClassName("image-and-caption");
 
     // changing the opacity of each image and caption opacity from 0 to 1
-    // slides[slidesIndex].style.opacity = 1;
+    slides[slidesIndex].style.opacity = 1;
+
     // trying using display: hidden to display: block instead of opacity
-    slides[slidesIndex].style.display = "block";
+    // slides[slidesIndex].style.display = "block";
 
     captionText = document.querySelector(".caption-container .caption-text");
     captionText.innerText = slides[slidesIndex].querySelector(".caption-text").innerText;
@@ -34,8 +35,64 @@ function initCarousel() {
     }
 
     // adds the class .active to the currently shown slide number to colour it dark grey
-    dots[slidesIndex].classList.add("active")
+    dots[slidesIndex].classList.add("active");
+ 
+
 }
-initCarousel().dots:first-child {
-    /* margin-left: 0; */
+initCarousel()
+
+// next and previous button control
+function plusSlides(n) {
+    moveSlides(slidesIndex + n);
 }
+
+
+function moveSlides(n) {
+
+    let i, currentSlide, nextSlide;
+
+    // going to change slides with css rather than javascript for scroll effect, creating an object
+    let moveSlideAnimationClass = {
+        forCurrentSlide: "",
+        forNextSlide: ""
+    }
+
+    // user has clicked on the next navigation button, setting object values to correct .class
+    if(n > slidesIndex) {
+        // if n is larger than slides length then user has reached end of carousel so need to loop back around
+        if(n >= slides.length) {n = 0}
+
+        moveSlideAnimationClass.forCurrentSlide="move-current-slide-left";
+        moveSlideAnimationClass.forNextSlide="move-next-slide-left";
+     } // user clicked on previous navigation button
+    else if (n < slidesIndex){
+        // this will loop back over to the last slide
+        if(n < 0) {n = slides.length-1}
+
+        moveSlideAnimationClass.forCurrentSlide="move-current-slide-right";
+        moveSlideAnimationClass.forNextSlide="move-next-slide-right";
+    }
+
+    if(n != slidesIndex){
+        currentSlide = slides[slidesIndex];
+        nextSlide = slides[n]
+        
+        // for loop to hide images and to remove active dot class
+        for(let i = 0; i < slides.length; i++){
+            slides[i].className="image-and-caption";
+            // slides[i].style.display = "none";
+            slides[i].style.opacity = 0;
+            dots[i].classList.remove("active");
+        }
+
+        // to add the correct animation class to the corresponding slides
+        currentSlide.classList.add(moveSlideAnimationClass.forCurrentSlide);
+        nextSlide.classList.add(moveSlideAnimationClass.forNextSlide);
+        dots[n].classList.add("active");
+        slidesIndex = n;
+    }
+
+}
+
+
+
