@@ -27,6 +27,16 @@ function initCarousel() {
         let dot = document.createElement("span");
         // adding the class="dots" to newly created span elements
         dot.classList.add("dots");
+        // adding onClick event to dots
+        // the +i+ is OUTSIDE the quotation marks, the + are used to concatenate a string for final value
+        // e.g 
+        // dot.setAttribute("class", "newDotClass");
+        // dot.setAttribute("onClick",  "moveSlides("  + i +  ")"  ) ;
+        // its 3 parts
+        // part 1: "moveSlides("
+        // part 2: i
+        // part 3: ")"
+        dot.setAttribute("onClick", "moveSlides(" + i + ")");
         // appending the .dots to the #dots-container element
         dotsContainer.append(dot);
         // pushing the .dots span elements into the dots array
