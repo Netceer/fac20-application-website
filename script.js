@@ -56,6 +56,12 @@ function plusSlides(n) {
     moveSlides(slidesIndex + n);
 }
 
+// event listeners for next and previous buttons
+let nextButton = document.querySelector(".next-button");
+nextButton.addEventListener("click", () => plusSlides(1) );
+
+let previousButton = document.querySelector(".previous-button");
+previousButton.addEventListener("click", () => plusSlides(-1) );
 
 function moveSlides(n) {
 
