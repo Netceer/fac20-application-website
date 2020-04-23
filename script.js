@@ -36,12 +36,13 @@ function initCarousel() {
         // part 1: "moveSlides("
         // part 2: i
         // part 3: ")"
-        dot.setAttribute("onClick", "moveSlides(" + i + ")");
+        // dot.setAttribute("onClick", "moveSlides(" + i + ")");
+        
         // appending the .dots to the #dots-container element
         dotsContainer.append(dot);
         // pushing the .dots span elements into the dots array
         dots.push(dot);
-
+      
     }
 
     // adds the class .active to the currently shown slide number to colour it dark grey
@@ -50,6 +51,9 @@ function initCarousel() {
 
 }
 initCarousel()
+
+// adding click event listener to the dots elements
+dots.map( (dotEle, index) => dotEle.addEventListener("click", () => moveSlides(index) ) )
 
 // next and previous button control
 function plusSlides(n) {
@@ -108,7 +112,6 @@ function moveSlides(n) {
         slidesIndex = n;
     }
 
+
+
 }
-
-
-
