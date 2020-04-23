@@ -95,19 +95,20 @@ img {
 .caption-container {
     position: absolute;
     z-index: 1;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    bottom: 0;
+    transform: translateX(-50%);
     font-size: 1.6rem;
     width: 25%;
     /* dont set height to auto because the animation will cause height to change during animation */
     height: 2.5rem;
+    line-height: 2.5rem;
     color: white;
     text-align: center;
     background: black;
     opacity: 0.7;
     overflow: hidden;
-    line-height: 2.25rem;
+    
 }
 
 /* why do we need a holder for caption text? Revisit later
