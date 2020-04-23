@@ -18,7 +18,7 @@ html {
     max-width: 1000px;
     width: 100%;
     height: 500px;
-    position: relative;
+    /* position: relative; */
     /* restricts user from highlighting the image carousel */
     user-select: none;
     border: solid red 1px;
@@ -31,7 +31,7 @@ html {
     /* hides rest of the images that are overflowing */
     overflow: hidden;
     border: solid black 1px;
-    /* position: relative; */
+    position: relative;
 }
 .image-and-caption {
     /* display: hidden; */
@@ -47,7 +47,7 @@ img {
 }
 
 .caption-text {
-    display: none;
+    /* display: none; */
 }
 
 .previous-button, .next-button {
@@ -58,13 +58,14 @@ img {
     z-index: 1;
     /* transition property is shorthand for property, duration, timing-function and delay, default values are all, 0s,ease,0s */
     transition: 0.5s ease;
-    top: 45%;
+    top: 27.5%;
     /* top counts the top edge of the element so to center the middle of the element,
      have to shift it up by 50% on itself to achieve true centering */
     transform: translateY(-50%);
     border-radius: 0px 10px 10px 0px;
     /* border: solid red 0.1rem; */
     font-size: 3rem;
+    /* border: solid yellow 1px; */
 }
 
 /* moving next button to the righthand side and changing padding to match*/
@@ -94,25 +95,26 @@ img {
 .caption-container {
     position: absolute;
     z-index: 1;
-    bottom: 10%;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%,-50%);
     font-size: 1.6rem;
     width: 25%;
-    height: auto;
+    /* dont set height to auto because the animation will cause height to change during animation */
+    height: 2.5rem;
     color: white;
     text-align: center;
     background: black;
     opacity: 0.7;
-    border: solid red 2px;
+    overflow: hidden;
+    line-height: 2.25rem;
 }
 
 /* why do we need a holder for caption text? Revisit later
 placeholder is to display the caption text for each image, same way image holder displays image */
 .caption-container .caption-text {
-    display: block;
-    margin: auto;
-
+    margin: 0;
+    /* border: solid blue 2px; */
 }
 
 #play-pause-button {
@@ -247,5 +249,38 @@ for moving current slide to the left. CANT USE DISPLAY PROPERTY FOR ANIMATIONS!!
     to{
         margin-left: 0;
         opacity: 1;
+    }
+}
+
+/* Creating classes for animations for caption text */
+.slide-caption-from-bottom {
+    animation-name: slide-from-bottom;
+    animation-duration: 0.5s;
+}
+
+.slide-caption-from-top {
+    animation-name: slide-from-top;
+    animation-duration: 0.5s;
+}
+
+@keyframes slide-from-bottom {
+    from{
+        opacity: 0;
+        margin-top: 100%;
+    }
+    to{
+        opacity: 1;
+        margin-top: 0%;
+    }
+}
+
+@keyframes slide-from-top {
+    from{
+        opacity: 0;
+        margin-top: -100%;
+    }
+    to{
+        opacity: 1;
+        margin-top: 0%;
     }
 }

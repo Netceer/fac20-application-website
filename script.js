@@ -15,6 +15,7 @@ function initCarousel() {
     // slides[slidesIndex].style.display = "block";
 
     captionText = document.querySelector(".caption-container .caption-text");
+    // sets correct default caption text according to current slide
     captionText.innerText = slides[slidesIndex].querySelector(".caption-text").innerText;
 
     // setting up the navigation dots
@@ -86,6 +87,8 @@ function moveSlides(n) {
         forNextSlide: ""
     }
 
+    let slideCaptionAnimationClass;
+
     // user has clicked on the next navigation button, setting object values to correct .class
     if(n > slidesIndex) {
         // if n is larger than slides length then user has reached end of carousel so need to loop back around
@@ -93,6 +96,9 @@ function moveSlides(n) {
 
         moveSlideAnimationClass.forCurrentSlide="move-current-slide-left";
         moveSlideAnimationClass.forNextSlide="move-next-slide-left";
+        // slide text in from top when moving to the right
+        slideCaptionAnimationClass = "slide-caption-from-top";
+
      } // user clicked on previous navigation button
     else if (n < slidesIndex){
         // this will loop back over to the last slide
@@ -100,6 +106,7 @@ function moveSlides(n) {
 
         moveSlideAnimationClass.forCurrentSlide="move-current-slide-right";
         moveSlideAnimationClass.forNextSlide="move-next-slide-right";
+        slideCaptionAnimationClass = "slide-caption-from-bottom";
     }
 
     if(n != slidesIndex){
@@ -121,6 +128,11 @@ function moveSlides(n) {
         slidesIndex = n;
     }
 
-
+    // Changing caption text along with image 
+    captionText.style.display = "none";
+    captionText.className = "caption-text " + slideCaptionAnimationClass;
+    // captionText.classList.add("caption-text", slideCaptionAnimationClass);
+    captionText.innerText = slides[n].querySelector(".caption-text").innerText;
+    captionText.style.display = "block";
 
 }
