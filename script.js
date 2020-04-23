@@ -74,7 +74,7 @@ function arrowKeyNavigation(e) {
 }
 
 // event listener for left and right arrow keys are pressed
-document.addEventListener("keydown", arrowKeyNavigation)
+document.addEventListener("keyup", arrowKeyNavigation)
 
 function moveSlides(n) {
 
