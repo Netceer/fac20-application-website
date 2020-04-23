@@ -67,6 +67,15 @@ nextButton.addEventListener("click", () => plusSlides(1) );
 let previousButton = document.querySelector(".previous-button");
 previousButton.addEventListener("click", () => plusSlides(-1) );
 
+// function for handling arrow key presses to navigate carousel
+function arrowKeyNavigation(e) {
+    if(e.key === "ArrowRight") plusSlides(1);
+    if(e.key === "ArrowLeft") plusSlides(-1);
+}
+
+// event listener for left and right arrow keys are pressed
+document.addEventListener("keydown", arrowKeyNavigation)
+
 function moveSlides(n) {
 
     let i, currentSlide, nextSlide;
