@@ -137,10 +137,27 @@ function moveSlides(n) {
 
 }
 // Creating auto play image carousel
-let timer = null;
+let timer = 0;
 
+// function for executing plusSlides function every 3s to start on page load
 function setTimer() {
-    // image carousel executes plusSlides function every 3s
     timer = setInterval( () => plusSlides(1), 3000)
 }
 setTimer();
+
+// Function for the play pause button itself
+function playPauseCarousel() {
+    let playPauseButtonIcon = document.querySelector("#play-pause-button i")
+    if(timer == 0){
+        setTimer();
+        playPauseButtonIcon.className = ("fas fa-pause");
+    }else{
+        clearInterval(timer);
+        timer = 0;
+        playPauseButtonIcon.className = ("fas fa-play");
+    }
+}
+
+// Adding event listener to the play and pause button
+let playPauseButton = document.getElementById("play-pause-button")
+playPauseButton.addEventListener("click", playPauseCarousel);
