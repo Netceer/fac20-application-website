@@ -58,7 +58,7 @@ img {
     z-index: 1;
     /* transition property is shorthand for property, duration, timing-function and delay, default values are all, 0s,ease,0s */
     transition: 0.5s ease;
-    top: 27.5%;
+    top: 50%;
     /* top counts the top edge of the element so to center the middle of the element,
      have to shift it up by 50% on itself to achieve true centering */
     transform: translateY(-50%);
@@ -121,7 +121,6 @@ placeholder is to display the caption text for each image, same way image holder
 #play-pause-button {
     position: absolute;
     top: 0;
-    left: 0;
     font-size: 3rem;
     color: #bbb;
     padding: 0.5rem 0.8rem 0.5rem 1rem;
