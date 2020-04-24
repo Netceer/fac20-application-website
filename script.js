@@ -136,3 +136,11 @@ function moveSlides(n) {
     captionText.style.display = "block";
 
 }
+// Creating auto play image carousel
+let timer = null;
+
+function setTimer() {
+    // image carousel executes plusSlides function every 3s
+    timer = setInterval( () => plusSlides(1), 3000)
+}
+setTimer();
