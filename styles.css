@@ -63,6 +63,7 @@ nav  ul {
 }
 
 #about-me {
+     /* border: solid blue 1px; */
 }
 
 #about-me h1 {
@@ -79,13 +80,31 @@ nav  ul {
 }
 
 #about-me p {
-    transform: translateY(-75%);
+    transform: translateY(-15%);
     font-size: 1.6rem;
     border-radius: 0.5rem;
-    margin: 2rem 1rem 1rem 1rem;
-    padding: 2rem 1rem 1rem 1rem;
+    /* margin-top: 1rem; */
+    padding: 2rem 2rem 2rem 2rem;
     /* color: var(--bg-colour); */
     z-index: -1;
     /* background-color: var(--text-colour); */
     border:solid var(--text-colour) 0.2rem;
+}
+
+#why-fac {
+     /* border: solid blue 1px; */
+     color: var(--bg-colour);
+     background-color: var(--text-colour);
+     border-radius: 1rem;
+     padding: 2rem;
+}
+#why-fac h1 {
+    padding-bottom: 1rem;
+}
+h1 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.6rem;
 }
