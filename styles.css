@@ -54,22 +54,38 @@ nav  ul {
     background-color: var(--light-accent);
 }
 
+
+#content-container {
+        margin: 0 auto;
+        margin-top: 10rem;
+        width: 80%;
+        /* border: solid blue 1px; */
+}
+
 #about-me {
-    z-index: 1;
-    /* border: solid red 1px; */
-    display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 8.5rem;
 }
 
-h1 {
+#about-me h1 {
+    position: relative;
+    left: 1.5rem;
     font-size: 2rem;
-    color: var(--main-colour);
+    color: white;
+    margin: 0;
+    width: 10rem;
+    background-color:var(--main-colour);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    z-index: 3;
 }
 
-p {
+#about-me p {
+    transform: translateY(-75%);
     font-size: 1.6rem;
-    color: var(--text-colour);
+    border-radius: 0.5rem;
+    margin: 2rem 1rem 1rem 1rem;
+    padding: 2rem 1rem 1rem 1rem;
+    /* color: var(--bg-colour); */
+    z-index: -1;
+    /* background-color: var(--text-colour); */
+    border:solid var(--text-colour) 0.2rem;
 }
