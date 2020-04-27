@@ -1,3 +1,12 @@
+/* adding some set colours variables for the website */
+:root{
+    --bg-colour: #f0f2f0;
+    --main-colour: #ffd064;
+    --text-colour: #4a3c4e;
+    --light-accent: #7ca4b3;
+    --dark-accent: #806157;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -12,6 +21,7 @@ html {
     scroll-behavior: smooth;
     display: flex;
     flex-direction: column;
+    background-color: var(--bg-colour);
 }
 
 #nav-bar {
@@ -20,6 +30,7 @@ html {
     position: fixed;
     width: 100%;
     border: solid red 1px;
+    background-color: var(--main-colour);
 }
 
 nav > ul {
@@ -37,6 +48,7 @@ ul {
 #nav-bar a {
     font-weight: bold;
     font-size: 1.6rem;
+    color: white;
     display: block;
     padding: 3.33rem 0.7rem;
     text-decoration: none;
