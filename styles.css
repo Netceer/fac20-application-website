@@ -111,7 +111,7 @@ p {
 }
 
 
-#image-carousel h1 {
+/* #image-carousel h1 {
     position: relative;
     left: 1.5rem;
     font-size: 2rem;
@@ -129,13 +129,13 @@ p {
     font-size: 1.6rem;
     border-radius: 1rem;
     /* margin-top: 1rem; */
-    padding: 4rem 2rem 2rem 2rem;
+    /* padding: 4rem 2rem 2rem 2rem;
     color: var(--bg-colour);
     z-index: -1;
     background-color: var(--dark-accent);
     background-color: var(--light-accent);
     background-color: var(--text-colour);
-}
+} */ 
 
 
 .carousel-container {
@@ -145,7 +145,7 @@ p {
     /* position: relative; */
     /* restricts user from highlighting the image carousel */
     user-select: none;
-    border: solid red 1px;
+    /* border: solid red 1px; */
     margin: 0 auto;
 }
 
@@ -154,7 +154,7 @@ p {
     height: 90%;
     /* hides rest of the images that are overflowing */
     overflow: hidden;
-    border: solid black 1px;
+    /* border: solid black 1px; */
     position: relative;
 }
 .image-and-caption {
@@ -171,7 +171,7 @@ img {
 }
 
 .caption-text {
-    /* display: none; */
+    display: none;
 }
 
 .previous-button, .next-button {
@@ -273,7 +273,7 @@ placeholder is to display the caption text for each image, same way image holder
     height: 10%;
     text-align: center;
     padding-top: 2rem;
-    border: solid green 1px;
+    /* border: solid green 1px; */
 }
 
 .dots {
