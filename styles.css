@@ -145,7 +145,7 @@ p {
     /* position: relative; */
     /* restricts user from highlighting the image carousel */
     user-select: none;
-    /* border: solid red 1px; */
+    border: solid var(--light-accent) 0.2rem;
     margin: 0 auto;
 }
 
@@ -176,7 +176,8 @@ img {
 
 .previous-button, .next-button {
     padding: 1.6rem 1.6rem 1.6rem 1rem;
-    color: #bbb;
+    color: var(--main-colour);
+    color: var(--light-accent);
     position: absolute;
     /* put buttons above images */
     z-index: 1;
@@ -201,7 +202,9 @@ img {
 
 /* hover effect on navigation buttons  */
 .previous-button:hover, .next-button:hover {
-    background-color: black;
+    background-color: var(--main-colour);
+    background-color: var(--light-accent);
+    color: var(--main-colour);
     cursor: pointer;
     opacity: 0.7;
 
@@ -227,9 +230,9 @@ img {
     /* dont set height to auto because the animation will cause height to change during animation */
     height: 2.5rem;
     line-height: 2.5rem;
-    color: white;
+    color: var(--text-colour);
     text-align: center;
-    background-color: #717171;
+    background-color: var(--bg-colour);
     opacity: 1;
     overflow: hidden;
     
@@ -246,7 +249,8 @@ placeholder is to display the caption text for each image, same way image holder
     position: absolute;
     top: 0;
     font-size: 3rem;
-    color: #bbb;
+    /* color: var(--main-colour); */
+    color: var(--light-accent);
     padding: 0.5rem 0.8rem 0.5rem 1rem;
     transition: ease 0.5s;
     z-index: 2;
@@ -256,7 +260,9 @@ placeholder is to display the caption text for each image, same way image holder
 }
 
 #play-pause-button:hover {
-    background-color: black;
+    /* background-color: var(--main-colour); */
+    background-color: var(--light-accent);
+    color: var(--main-colour);
     cursor: pointer;
     opacity: 0.7;
 }
@@ -273,6 +279,7 @@ placeholder is to display the caption text for each image, same way image holder
     height: 10%;
     text-align: center;
     padding-top: 2rem;
+    background: var(--light-accent);
     /* border: solid green 1px; */
 }
 
@@ -285,13 +292,13 @@ placeholder is to display the caption text for each image, same way image holder
     margin: 0 0.5rem;
     cursor: pointer;
     /* have to use background color because the spam elements have no content in them so color wont color anything */
-    background-color: #bbb;
+    background-color: var(--bg-colour);
     transition: 0.5s ease;
     transform: translateY(-25%);
 }
 
 .dots:hover, .dots.active {
-    background-color: #717171; /* dark grey colour */
+    background-color: var(--main-colour); /* dark grey colour */
 }
 
 /* Creating a class for an animation to move current image to the left out of view */
