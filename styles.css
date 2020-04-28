@@ -63,6 +63,14 @@ nav  ul {
         /* border: solid blue 1px; */
 }
 
+h1 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.6rem;
+}
+
 #about-me {
      /* border: solid blue 1px; */
 }
@@ -73,7 +81,7 @@ nav  ul {
     font-size: 2rem;
     color: white;
     margin: 0;
-    width: 10rem;
+    width: 9.5rem;
     background-color:var(--main-colour);
     border-radius: 0.5rem;
     padding: 0.5rem;
@@ -81,7 +89,7 @@ nav  ul {
 }
 
 #about-me p {
-    transform: translateY(-15%);
+    transform: translateY(-1.9rem);
     font-size: 1.6rem;
     border-radius: 0.5rem;
     /* margin-top: 1rem; */
@@ -92,24 +100,30 @@ nav  ul {
     border:solid var(--text-colour) 0.2rem;
 }
 
-#why-fac {
-     /* border: solid blue 1px; */
-     color: var(--bg-colour);
-     background-color: var(--text-colour);
-     border-radius: 1rem;
-     padding: 2rem;
-}
 #why-fac h1 {
-    padding-bottom: 1rem;
-}
-h1 {
+    position: relative;
+    left: 1.5rem;
     font-size: 2rem;
+    color: white;
+    margin: 0;
+    width: 25.2rem;
+    background-color:var(--main-colour);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    z-index: 1;
 }
 
-p {
+#why-fac p {
+    transform: translateY(-1.9rem);
     font-size: 1.6rem;
+    border-radius: 0.5rem;
+    /* margin-top: 1rem; */
+    padding: 3rem 2rem 2rem 2rem;
+    /* color: var(--bg-colour); */
+    z-index: -1;
+    /* background-color: var(--text-colour); */
+    border:solid var(--text-colour) 0.2rem;
 }
-
 
 /* #image-carousel h1 {
     position: relative;
