@@ -136,3 +136,274 @@ p {
     background-color: var(--light-accent);
     background-color: var(--text-colour);
 }
+
+
+.carousel-container {
+    max-width: 1000px;
+    width: 100%;
+    height: 500px;
+    /* position: relative; */
+    /* restricts user from highlighting the image carousel */
+    user-select: none;
+    border: solid red 1px;
+    margin: 0 auto;
+}
+
+.images-container {
+    width: 100%;
+    height: 90%;
+    /* hides rest of the images that are overflowing */
+    overflow: hidden;
+    border: solid black 1px;
+    position: relative;
+}
+.image-and-caption {
+    /* display: hidden; */
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+}
+img {
+    /* need to set to 100% otherwise all images will appear due to difference in sizes */
+    width: 100%;
+    height: 100%;
+}
+
+.caption-text {
+    /* display: none; */
+}
+
+.previous-button, .next-button {
+    padding: 1.6rem 1.6rem 1.6rem 1rem;
+    color: #bbb;
+    position: absolute;
+    /* put buttons above images */
+    z-index: 1;
+    /* transition property is shorthand for property, duration, timing-function and delay, default values are all, 0s,ease,0s */
+    transition: 0.5s ease;
+    top: 50%;
+    /* top counts the top edge of the element so to center the middle of the element,
+     have to shift it up by 50% on itself to achieve true centering */
+    transform: translateY(-50%);
+    border-radius: 0px 10px 10px 0px;
+    /* border: solid red 0.1rem; */
+    font-size: 3rem;
+    /* border: solid yellow 1px; */
+}
+
+/* moving next button to the righthand side and changing padding to match*/
+.next-button {
+    right: 0;
+    border-radius: 10px 0px 0px 10px;
+    padding: 1.6rem 1rem 1.6rem 1.6rem;
+}
+
+/* hover effect on navigation buttons  */
+.previous-button:hover, .next-button:hover {
+    background-color: black;
+    cursor: pointer;
+    opacity: 0.7;
+
+}
+
+/* changing opacity of arrow icons  */
+.fas {
+    opacity: 0.7;
+}
+/* hovering the buttons will also increase opacity of the arrow icon */
+.previous-button:hover .fas, .next-button .fas{
+    opacity: 1;
+}
+
+.caption-container {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    font-size: 1.6rem;
+    width: 25%;
+    /* dont set height to auto because the animation will cause height to change during animation */
+    height: 2.5rem;
+    line-height: 2.5rem;
+    color: white;
+    text-align: center;
+    background-color: #717171;
+    opacity: 1;
+    overflow: hidden;
+    
+}
+
+/* why do we need a holder for caption text? Revisit later
+placeholder is to display the caption text for each image, same way image holder displays image */
+.caption-container .caption-text {
+    margin: 0;
+    /* border: solid blue 2px; */
+}
+
+#play-pause-button {
+    position: absolute;
+    top: 0;
+    font-size: 3rem;
+    color: #bbb;
+    padding: 0.5rem 0.8rem 0.5rem 1rem;
+    transition: ease 0.5s;
+    z-index: 2;
+    cursor: pointer;
+    border-radius: 0rem 0rem 1rem 0rem;
+   
+}
+
+#play-pause-button:hover {
+    background-color: black;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+#play-pause-button:hover .fas {
+    opacity: 1;
+}
+
+#dots-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    padding-top: 2rem;
+    border: solid green 1px;
+}
+
+.dots {
+    width: 2rem;
+    height: 2rem;
+    /* border radius 50% to turn into circles */
+    border-radius: 50%;
+    /* space between the dots */
+    margin: 0 0.5rem;
+    cursor: pointer;
+    /* have to use background color because the spam elements have no content in them so color wont color anything */
+    background-color: #bbb;
+    transition: 0.5s ease;
+    transform: translateY(-25%);
+}
+
+.dots:hover, .dots.active {
+    background-color: #717171; /* dark grey colour */
+}
+
+/* Creating a class for an animation to move current image to the left out of view */
+.move-current-slide-left {
+    animation-name: move-current-left;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+/* Creating a class for an animation to move next image to the left into view */
+.move-next-slide-left {
+    animation-name: move-next-left;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+
+
+/* after naming the animation, the keyframes is governs the animation details 
+for moving current slide to the left. CANT USE DISPLAY PROPERTY FOR ANIMATIONS!! Have to use opacity or height 0 for this method */
+@keyframes move-current-left {
+    from{
+        margin-left: 0;
+        opacity: 1;
+    }
+    to{
+        margin-left: -100%;
+        /* margin-right: 100%; */
+        opacity: 1;
+    }
+}
+
+@keyframes move-next-left {
+    from{
+        margin-left: 100%;
+        opacity: 1;
+    }
+    to{
+        margin-left: 0;
+        opacity: 1;
+    }
+}
+
+/* Creating a class for an animation to move current image to the right out of view */
+.move-current-slide-right {
+    animation-name: move-current-right;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+/* Creating a class for an animation to move next image to the right into view */
+.move-next-slide-right {
+    animation-name: move-next-right;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes move-current-right {
+    from{
+        margin-left: 0;
+        opacity: 1;
+    }
+    to{
+        margin-left: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes move-next-right {
+    from{
+        margin-left: -100%;
+        opacity: 1;
+    }
+    to{
+        margin-left: 0;
+        opacity: 1;
+    }
+}
+
+/* Creating classes for animations for caption text */
+.slide-caption-from-bottom {
+    animation-name: slide-from-bottom;
+    animation-duration: 0.5s;
+}
+
+.slide-caption-from-top {
+    animation-name: slide-from-top;
+    animation-duration: 0.5s;
+}
+
+@keyframes slide-from-bottom {
+    from{
+        opacity: 0;
+        margin-top: 100%;
+    }
+    to{
+        opacity: 1;
+        margin-top: 0%;
+    }
+}
+
+@keyframes slide-from-top {
+    from{
+        opacity: 0;
+        margin-top: -100%;
+    }
+    to{
+        opacity: 1;
+        margin-top: 0%;
+    }
+}
