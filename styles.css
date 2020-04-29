@@ -108,34 +108,6 @@ p {
     border:solid var(--text-colour) 0.2rem;
 }
 
-/* #image-carousel h1 {
-    position: relative;
-    left: 1.5rem;
-    font-size: 2rem;
-    color: white;
-    margin-top: 2rem;
-    width: 15rem;
-    background-color:var(--main-colour);
-    border-radius: 1rem;
-    padding: 0.5rem;
-    z-index: 3;
-}
-
-#image-carousel p {
-    transform: translateY(-15%);
-    font-size: 1.6rem;
-    border-radius: 1rem;
-    /* margin-top: 1rem; */
-    /* padding: 4rem 2rem 2rem 2rem;
-    color: var(--bg-colour);
-    z-index: -1;
-    background-color: var(--dark-accent);
-    background-color: var(--light-accent);
-    background-color: var(--text-colour);
-} */ 
-
-
-
 #progress-links ul {
     display: flex;
     justify-content: space-around;
