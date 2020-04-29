@@ -81,32 +81,23 @@ p {
     padding: 0.5rem;
     z-index: 1;
 }
+
+.section-paragraph {
+    transform: translateY(-1.9rem);
+    border-radius: 0.5rem;
+    /* margin-top: 1rem; */
+    padding: 3rem 2rem 2rem 2rem;
+    /* color: var(--bg-colour); */
+    z-index: -1;
+    /* background-color: var(--text-colour); */
+    border:solid var(--text-colour) 0.2rem;
+
+}
+
 #about-me {
      /* border: solid blue 1px; */
 }
 
-#about-me p {
-    transform: translateY(-1.9rem);
-    border-radius: 0.5rem;
-    /* margin-top: 1rem; */
-    padding: 3rem 2rem 2rem 2rem;
-    /* color: var(--bg-colour); */
-    z-index: -1;
-    /* background-color: var(--text-colour); */
-    border:solid var(--text-colour) 0.2rem;
-}
-
-
-#why-fac p {
-    transform: translateY(-1.9rem);
-    border-radius: 0.5rem;
-    /* margin-top: 1rem; */
-    padding: 3rem 2rem 2rem 2rem;
-    /* color: var(--bg-colour); */
-    z-index: -1;
-    /* background-color: var(--text-colour); */
-    border:solid var(--text-colour) 0.2rem;
-}
 
 #progress-links ul {
     display: flex;
