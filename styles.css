@@ -130,6 +130,12 @@ p {
 }
 
 
+
+.progress-link:hover {
+    color: var(--light-accent);
+    transform: translateY(5%);
+}
+
 .iconify {
     font-size: 5rem;
     margin-right: 1rem;
