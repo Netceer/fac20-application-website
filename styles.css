@@ -75,7 +75,7 @@ p {
     left: 1.5rem;
     color: white;
     margin: 0;
-    width: 9.5rem;
+    display: inline-block;
     background-color:var(--main-colour);
     border-radius: 0.5rem;
     padding: 0.5rem;
