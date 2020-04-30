@@ -154,3 +154,58 @@ function playPauseCarousel() {
 // Adding event listener to the play and pause button
 let playPauseButton = document.getElementById("play-pause-button")
 playPauseButton.addEventListener("click", playPauseCarousel);
+
+// Flame test 
+const elements = document.querySelectorAll(".element");
+const dragAreas = document.querySelectorAll(".dragAreas");
+
+let draggedItem = null;
+
+// iterate through all elements 
+for (let i = 0; i < elements.length; i++) {
+    const element = elements[i];
+    // add event listener for drag start
+    element.addEventListener("dragstart", function (){
+        console.log("drag start");
+        draggedItem = element;
+        setTimeout( () => draggedItem.style.display = "none", 0);
+    
+    })
+
+    // add event listener for drag end
+    element.addEventListener("dragend", function (){
+        console.log("drag end");
+
+        setTimeout( () => {
+            draggedItem.style.display = "block";
+            draggedItem = null;
+        }, 0);
+        
+    })
+
+   
+    
+}
+
+for (let j = 0; j < dragAreas.length; j++) {
+    const dragArea = dragAreas[j];
+    let currentElement = dragArea.querySelectorAll(".element");
+
+    // need event listeners to prevent default for dragover and dragenter
+
+    dragArea.addEventListener("dragover", (e) => e.preventDefault());
+    dragArea.addEventListener("dragenter", (e) => e.preventDefault());
+    
+    // event listener for drop
+    dragArea.addEventListener("drop", function(e){
+        console.log("drop");
+        console.log(dragArea)
+        this.append(draggedItem);
+        console.log(currentElement);
+    })
+
+    if(currentElement.length == 2 ) {
+        console.log(currentElement);
+        currentElement.removeChild(currentElement.childNodes[0])
+    }
+}
