@@ -167,6 +167,7 @@ for (let i = 0; i < elements.length; i++) {
     // add event listener for drag start
     element.addEventListener("dragstart", function (){
         console.log("drag start");
+        // using clone fixes the big problem!!
         draggedItem = element.cloneNode(true);
         // setTimeout( () => draggedItem.style.display = "none", 0);
     
@@ -199,25 +200,27 @@ const dragArea = document.querySelector(".dragAreas");
     dragArea.addEventListener("drop", function(e){
         console.log("drop");
         this.append(draggedItem);
-        test();
+        removeExtraElements();
         checkElement();
     })
+
+    // function to only allow 1 element above flame
 let testNode = null;
-    function test(){
+
+    function removeExtraElements(){
     testNode = dragArea.querySelectorAll(".element")
     if(testNode.length > 1 ) {
-        console.log("working");
         testNode[0].remove()
-    
     }
 }
 
+// function to change website colour according to the flame test colour!
 
 function checkElement(){
     testNode = dragArea.querySelectorAll(".element")
     if(testNode[0].className == "element copper") {
         document.documentElement.style
-    .setProperty('--main-colour', 'pink');
+    .setProperty('--main-colour', 'pink')
     }
 
     if(testNode[0].className == "element sodium") {
