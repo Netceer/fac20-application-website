@@ -204,9 +204,9 @@ const dragArea = document.querySelector(".dragAreas");
         checkElement();
     })
 
-    // function to only allow 1 element above flame
+//    make testNode null and let functions define variable so it only assigns elements dragged into flame
 let testNode = null;
-
+ // function to only allow 1 element above flame
     function removeExtraElements(){
     testNode = dragArea.querySelectorAll(".element")
     if(testNode.length > 1 ) {
@@ -214,18 +214,44 @@ let testNode = null;
     }
 }
 
-// function to change website colour according to the flame test colour!
+// function to change website colours according to the flame test result
 
 function checkElement(){
     testNode = dragArea.querySelectorAll(".element")
+    let rootCSS = document.documentElement.style
+    // copper ions burn green
     if(testNode[0].className == "element copper") {
-        document.documentElement.style
-    .setProperty('--main-colour', 'pink')
+        rootCSS.setProperty('--bg-colour', '#e1c6c2')
+        rootCSS.setProperty('--main-colour', '#008000')
+        rootCSS.setProperty('--text-colour', '#6d454f')
+        rootCSS.setProperty('--light-accent', '#5a8f84')
+        rootCSS.setProperty('--dark-accent', '#678698')
+    }
+// potassium ions burn lilac
+    if(testNode[0].className == "element potassium") {
+        rootCSS.setProperty('--bg-colour', '#f3f3eb')
+        rootCSS.setProperty('--main-colour', '#C8A2C8')
+        rootCSS.setProperty('--text-colour', '#8f4899')
+        rootCSS.setProperty('--light-accent', '#c48c98')
+        rootCSS.setProperty('--dark-accent', '#817590')
+    }
+// lithium ions burn crimson
+    if(testNode[0].className == "element lithium") {
+        rootCSS.setProperty('--bg-colour', '#F3EEEF')
+        rootCSS.setProperty('--main-colour', '#DC143C')
+        rootCSS.setProperty('--text-colour', '#292230')
+        rootCSS.setProperty('--light-accent', '#E89980')
+        rootCSS.setProperty('--dark-accent', '#86849F')
+    }
+// sodium ions burn yellow
+    if(testNode[0].className == "element sodium") {
+        rootCSS.setProperty('--bg-colour', '#f0f2f0')
+        rootCSS.setProperty('--main-colour', '#ffd064')
+        rootCSS.setProperty('--text-colour', '#4a3c4e')
+        rootCSS.setProperty('--light-accent', '#7ca4b3')
+        rootCSS.setProperty('--dark-accent', '#806157')
     }
 
-    if(testNode[0].className == "element sodium") {
-        
-    }
 
 }
 
