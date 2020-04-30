@@ -134,12 +134,13 @@ p {
 }
 
 #content-container {
-    margin: 0 auto;
-    margin-top: 12rem;
+    margin-top: 11rem;
     width: 90%;
-    /* border: solid blue 1px; */
 }
 
+.nav-link {
+    padding: 2rem 1rem;
+}
     
 }
 
