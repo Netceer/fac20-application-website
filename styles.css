@@ -419,7 +419,7 @@ for moving current slide to the left. CANT USE DISPLAY PROPERTY FOR ANIMATIONS!!
     display: flex;
 }
 
-.elements-list {
+#elements-list {
     width: 30%;
     border: solid red 1px;
 
@@ -442,7 +442,7 @@ for moving current slide to the left. CANT USE DISPLAY PROPERTY FOR ANIMATIONS!!
    background-color: #C0C0C0;
 }
 
-.bunsen-burner-container {
+#bunsen-burner-container {
     display: flex;
     flex-direction: column;
     align-items: center;

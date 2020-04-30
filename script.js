@@ -157,7 +157,7 @@ playPauseButton.addEventListener("click", playPauseCarousel);
 
 // Flame test 
 const elements = document.querySelectorAll(".element");
-const dragAreas = document.querySelectorAll(".dragAreas");
+
 
 let draggedItem = null;
 
@@ -168,7 +168,7 @@ for (let i = 0; i < elements.length; i++) {
     element.addEventListener("dragstart", function (){
         console.log("drag start");
         draggedItem = element;
-        setTimeout( () => draggedItem.style.display = "none", 0);
+        // setTimeout( () => draggedItem.style.display = "none", 0);
     
     })
 
@@ -186,10 +186,9 @@ for (let i = 0; i < elements.length; i++) {
    
     
 }
+const dragArea = document.querySelector(".dragAreas");
 
-for (let j = 0; j < dragAreas.length; j++) {
-    const dragArea = dragAreas[j];
-    let currentElement = dragArea.querySelectorAll(".element");
+
 
     // need event listeners to prevent default for dragover and dragenter
 
@@ -199,13 +198,39 @@ for (let j = 0; j < dragAreas.length; j++) {
     // event listener for drop
     dragArea.addEventListener("drop", function(e){
         console.log("drop");
-        console.log(dragArea)
         this.append(draggedItem);
-        console.log(currentElement);
+        test();
+        checkElement();
     })
-
-    if(currentElement.length == 2 ) {
-        console.log(currentElement);
-        currentElement.removeChild(currentElement.childNodes[0])
+let testNode = null;
+    function test(){
+    testNode = dragArea.querySelectorAll(".element")
+    if(testNode.length > 1 ) {
+        console.log("working");
+        testNode[0].remove()
+    
     }
 }
+
+let flameTest = document.getElementById("flame-test");
+let stuff1 = document.getElementById("elements-list").cloneNode(true)
+let stuff3 = document.getElementById("bunsen-burner-container");
+
+
+function checkElement(){
+    testNode = dragArea.querySelectorAll(".element")
+    if(testNode[0].className == "element copper") {
+        document.documentElement.style
+    .setProperty('--main-colour', 'pink');
+    }
+
+    if(testNode[0].className == "element sodium") {
+        console.log("reset")
+        stuff1.remove();
+        stuff2.remove();
+        flameTest.append(stuff1);
+        flameTest.append(stuff2);
+    }
+
+}
+
