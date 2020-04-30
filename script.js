@@ -167,7 +167,7 @@ for (let i = 0; i < elements.length; i++) {
     // add event listener for drag start
     element.addEventListener("dragstart", function (){
         console.log("drag start");
-        draggedItem = element;
+        draggedItem = element.cloneNode(true);
         // setTimeout( () => draggedItem.style.display = "none", 0);
     
     })
@@ -212,10 +212,6 @@ let testNode = null;
     }
 }
 
-let flameTest = document.getElementById("flame-test");
-let stuff1 = document.getElementById("elements-list").cloneNode(true)
-let stuff3 = document.getElementById("bunsen-burner-container");
-
 
 function checkElement(){
     testNode = dragArea.querySelectorAll(".element")
@@ -225,11 +221,7 @@ function checkElement(){
     }
 
     if(testNode[0].className == "element sodium") {
-        console.log("reset")
-        stuff1.remove();
-        stuff2.remove();
-        flameTest.append(stuff1);
-        flameTest.append(stuff2);
+        
     }
 
 }
