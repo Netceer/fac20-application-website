@@ -10,6 +10,7 @@
 * {
     margin: 0;
     padding: 0;
+
     /* set everything to border-box styling */
     box-sizing: border-box;
 }
@@ -30,14 +31,12 @@ html {
     justify-content: flex-end;
     position: fixed;
     width: 100%;
-    /* border: solid red 1px; */
     background-color: var(--main-colour);
     z-index: 2;
 }
 
 nav  ul {
     display: flex;
-    /* border: solid blue 1px; */
     list-style-type: none;
 }
 
@@ -48,7 +47,6 @@ nav  ul {
     display: block;
     padding: 3rem 1rem;
     text-decoration: none;
-    /* border: solid green 1px; */
 }
 
 .nav-link:hover {
@@ -60,7 +58,6 @@ nav  ul {
         margin: 0 auto;
         margin-top: 10rem;
         width: 80%;
-        /* border: solid blue 1px; */
 }
 
 h1 {
@@ -86,19 +83,11 @@ p {
 .section-paragraph {
     transform: translateY(-1.9rem);
     border-radius: 0.5rem;
-    /* margin-top: 1rem; */
     padding: 3rem 2rem 2rem 2rem;
-    /* color: var(--bg-colour); */
     z-index: -1;
-    /* background-color: var(--text-colour); */
     border:solid var(--text-colour) 0.2rem;
 
 }
-
-#about-me {
-     /* border: solid blue 1px; */
-}
-
 
 #progress-links ul {
     display: flex;
@@ -158,11 +147,11 @@ p {
     max-width: 1000px;
     width: 100%;
     height: 500px;
-    /* position: relative; */
     /* restricts user from highlighting the image carousel */
     user-select: none;
     border: solid var(--light-accent) 0.2rem;
     margin: 0 auto;
+    margin-bottom: 2rem;
 }
 
 .images-container {
@@ -170,7 +159,6 @@ p {
     height: 90%;
     /* hides rest of the images that are overflowing */
     overflow: hidden;
-    /* border: solid black 1px; */
     position: relative;
 }
 .image-and-caption {
@@ -204,9 +192,7 @@ img {
      have to shift it up by 50% on itself to achieve true centering */
     transform: translateY(-50%);
     border-radius: 0px 10px 10px 0px;
-    /* border: solid red 0.1rem; */
     font-size: 3rem;
-    /* border: solid yellow 1px; */
 }
 
 /* moving next button to the righthand side and changing padding to match*/
@@ -254,18 +240,15 @@ img {
     
 }
 
-/* why do we need a holder for caption text? Revisit later
-placeholder is to display the caption text for each image, same way image holder displays image */
+/* placeholder is to display the caption text for each image, same way image holder displays image */
 .caption-container .caption-text {
     margin: 0;
-    /* border: solid blue 2px; */
 }
 
 #play-pause-button {
     position: absolute;
     top: 0;
     font-size: 3rem;
-    /* color: var(--main-colour); */
     color: var(--light-accent);
     padding: 0.5rem 0.8rem 0.5rem 1rem;
     transition: ease 0.5s;
@@ -276,7 +259,6 @@ placeholder is to display the caption text for each image, same way image holder
 }
 
 #play-pause-button:hover {
-    /* background-color: var(--main-colour); */
     background-color: var(--light-accent);
     color: var(--main-colour);
     cursor: pointer;
@@ -296,7 +278,6 @@ placeholder is to display the caption text for each image, same way image holder
     text-align: center;
     padding-top: 2rem;
     background: var(--light-accent);
-    /* border: solid green 1px; */
 }
 
 .dots {
@@ -314,7 +295,7 @@ placeholder is to display the caption text for each image, same way image holder
 }
 
 .dots:hover, .dots.active {
-    background-color: var(--main-colour); /* dark grey colour */
+    background-color: var(--main-colour); 
 }
 
 /* Creating a class for an animation to move current image to the left out of view */
@@ -344,7 +325,6 @@ for moving current slide to the left. CANT USE DISPLAY PROPERTY FOR ANIMATIONS!!
     }
     to{
         margin-left: -100%;
-        /* margin-right: 100%; */
         opacity: 1;
     }
 }

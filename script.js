@@ -11,10 +11,8 @@ function initCarousel() {
     // changing the opacity of each image and caption opacity from 0 to 1
     slides[slidesIndex].style.opacity = 1;
 
-    // trying using display: hidden to display: block instead of opacity
-    // slides[slidesIndex].style.display = "block";
-
     captionText = document.querySelector(".caption-container .caption-text");
+
     // sets correct default caption text according to current slide
     captionText.innerText = slides[slidesIndex].querySelector(".caption-text").innerText;
 
@@ -24,23 +22,16 @@ function initCarousel() {
 
     // creating the same number of dots as number of image slides
     for(let i = 0; i < slides.length; i++){
+
         // creating new html span element
         let dot = document.createElement("span");
+
         // adding the class="dots" to newly created span elements
         dot.classList.add("dots");
-        // adding onClick event to dots
-        // the +i+ is OUTSIDE the quotation marks, the + are used to concatenate a string for final value
-        // e.g 
-        // dot.setAttribute("class", "newDotClass");
-        // dot.setAttribute("onClick",  "moveSlides("  + i +  ")"  ) ;
-        // its 3 parts
-        // part 1: "moveSlides("
-        // part 2: i
-        // part 3: ")"
-        // dot.setAttribute("onClick", "moveSlides(" + i + ")");
-        
+
         // appending the .dots to the #dots-container element
         dotsContainer.append(dot);
+
         // pushing the .dots span elements into the dots array
         dots.push(dot);
       
@@ -96,11 +87,13 @@ function moveSlides(n) {
 
         moveSlideAnimationClass.forCurrentSlide="move-current-slide-left";
         moveSlideAnimationClass.forNextSlide="move-next-slide-left";
+
         // slide text in from top when moving to the right
         slideCaptionAnimationClass = "slide-caption-from-top";
 
      } // user clicked on previous navigation button
     else if (n < slidesIndex){
+
         // this will loop back over to the last slide
         if(n < 0) {n = slides.length-1}
 
@@ -116,6 +109,7 @@ function moveSlides(n) {
         // for loop to hide images and to remove active dot class
         for(let i = 0; i < slides.length; i++){
             slides[i].className="image-and-caption";
+
             // slides[i].style.display = "none";
             slides[i].style.opacity = 0;
             dots[i].classList.remove("active");
@@ -131,7 +125,6 @@ function moveSlides(n) {
     // Changing caption text along with image 
     captionText.style.display = "none";
     captionText.className = "caption-text " + slideCaptionAnimationClass;
-    // captionText.classList.add("caption-text", slideCaptionAnimationClass);
     captionText.innerText = slides[n].querySelector(".caption-text").innerText;
     captionText.style.display = "block";
 
