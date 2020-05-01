@@ -276,3 +276,26 @@ function checkElement(){
 
 }
 
+// code for the responsive navbar
+
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+const links = document.querySelectorAll(".nav-links li");
+
+// add event listener to hamburger icon
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+
+    // add opacity-one class to each link anchor
+    // need to turn nodelist into an array to use map
+    let linksArr = [...links];
+    linksArr.map( link => {
+        link.classList.toggle("opacity-one");
+    })
+
+    // .forEach works on nodelist without any converting
+    // links.forEach(link => {
+    //     link.classList.toggle("opacity-one")
+    // })
+
+})
