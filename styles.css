@@ -464,3 +464,7 @@ max-height: 10rem;
 #bunsen-burner-container h2 {
     margin-bottom: 1rem;
 }
+
+.drag-hover-above-flame {
+border-style: dashed;
+}

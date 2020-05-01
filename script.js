@@ -192,9 +192,19 @@ const dragArea = document.querySelector(".dragAreas");
 
 
     // need event listeners to prevent default for dragover and dragenter
+    // add class toggles for class dragenter and dragleave
 
     dragArea.addEventListener("dragover", (e) => e.preventDefault());
-    dragArea.addEventListener("dragenter", (e) => e.preventDefault());
+    
+    
+    dragArea.addEventListener("dragenter", (e) => {
+        e.preventDefault();
+        dragArea.classList.toggle("drag-hover-above-flame");
+    });
+
+    dragArea.addEventListener("dragleave", (e) => {
+        dragArea.classList.toggle("drag-hover-above-flame");
+    });
     
     // event listener for drop
     dragArea.addEventListener("drop", function(e){
