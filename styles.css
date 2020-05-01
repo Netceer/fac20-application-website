@@ -49,12 +49,12 @@ nav  ul {
     padding: 0.3rem;
     text-decoration: none;
     border: solid transparent 0.5rem;
-    transition: border-top 1s;
+    transition: color 0.7s;
 }
 
 .nav-link:hover {
+    color: var(--light-accent);
     border-bottom: solid var(--light-accent) 0.5rem;
-    border-top: solid var(--light-accent) 0.5rem;
 }
 
 
