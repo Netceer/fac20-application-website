@@ -479,7 +479,8 @@ border-style: dashed;
 }
 
 /* start of media queries */
-@media only screen and (max-width: 800px) {
+/* tablet screen sizes */
+@media only screen and (max-width: 768px) {
 
     #progress-links ul {
      display: flex;
@@ -505,6 +506,22 @@ border-style: dashed;
         display: none;
     }
         
+    /* styling for responsive navbar */
+    nav ul {
+        /* 100vh to cover whole screen of device */
+        height: 100vh;
+        width: 100%;
+        background-color: var(--main-colour);
+        flex-direction: column;
+        align-items: center;
+        display: none;
+    }
+
     }
     
+    /* smartphone screen sizes */
+@media only screen and (max-width: 480px) {
+
+}
+
     /* end of media queries */
