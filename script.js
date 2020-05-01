@@ -209,6 +209,7 @@ const dragArea = document.querySelector(".dragAreas");
     
     // event listener for drop
     dragArea.addEventListener("drop", function(e){
+        dragArea.classList.toggle("drag-hover-above-flame");
         console.log("drop");
         this.append(draggedItem);
         removeExtraElements();
