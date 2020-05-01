@@ -45,12 +45,16 @@ nav  ul {
     font-size: 2.2rem;
     color: white;
     display: block;
-    padding: 3rem 1rem;
+    margin: 2rem 1rem;
+    padding: 0.3rem;
     text-decoration: none;
+    border: solid transparent 0.5rem;
+    transition: border-top 1s;
 }
 
 .nav-link:hover {
-    background-color: var(--light-accent);
+    border-bottom: solid var(--light-accent) 0.5rem;
+    border-top: solid var(--light-accent) 0.5rem;
 }
 
 
