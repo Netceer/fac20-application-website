@@ -429,6 +429,7 @@ for moving current slide to the left. CANT USE DISPLAY PROPERTY FOR ANIMATIONS!!
     text-align: center;
     width: 3rem;
     height: 3rem;
+    border-radius: 25%;
 }
 
 .copper {
@@ -437,6 +438,7 @@ for moving current slide to the left. CANT USE DISPLAY PROPERTY FOR ANIMATIONS!!
 
 .potassium, .lithium, .sodium {
    background-color: #C0C0C0;
+ 
 }
 
 #bunsen-burner-container {
@@ -453,10 +455,12 @@ max-height: 10rem;
 }
 
 .above-flame-box {
-    width: 3rem;
-    height: 3rem;
+    width: 3.2rem;
+    height: 3.2rem;
     background-color: white;
-    border: solid red 1px;
-
-transform: translateX(-12%);
+    border: solid var(--light-accent) 1px;
+    transform: translateX(-12%);
+}
+#bunsen-burner-container h2 {
+    margin-bottom: 1rem;
 }
