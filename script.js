@@ -202,6 +202,7 @@ const dragArea = document.querySelector(".dragAreas");
         this.append(draggedItem);
         removeExtraElements();
         checkElement();
+        
     })
 
 //    make testNode null and let functions define variable so it only assigns elements dragged into flame
@@ -221,11 +222,11 @@ function checkElement(){
     let rootCSS = document.documentElement.style
     // copper ions burn green
     if(testNode[0].className == "element copper") {
-        rootCSS.setProperty('--bg-colour', '#e1c6c2')
-        rootCSS.setProperty('--main-colour', '#008000')
-        rootCSS.setProperty('--text-colour', '#6d454f')
-        rootCSS.setProperty('--light-accent', '#5a8f84')
-        rootCSS.setProperty('--dark-accent', '#678698')
+        rootCSS.setProperty('--bg-colour', '#F1F0F3')
+        rootCSS.setProperty('--main-colour', '#00DD6E')
+        rootCSS.setProperty('--text-colour', '#242027')
+        rootCSS.setProperty('--light-accent', '#78A5A2')
+        rootCSS.setProperty('--dark-accent', '#656757')
     }
 // potassium ions burn lilac
     if(testNode[0].className == "element potassium") {
