@@ -172,6 +172,7 @@ for (let i = 0; i < elements.length; i++) {
         // setTimeout( () => draggedItem.style.display = "none", 0);
         element.classList.toggle("after-drag");
         draggedItem.classList.toggle("after-drag")
+        draggedItem.style.backgroundColor = 'var(--main-colour)';
     })
 
     // add event listener for drag end
@@ -214,6 +215,7 @@ const dragArea = document.querySelector(".dragAreas");
         this.append(draggedItem);
         removeExtraElements();
         checkElement();
+        draggedItem.classList.add("burn-away");
     })
 
 //    make testNode null and let functions define variable so it only assigns elements dragged into flame
@@ -227,7 +229,7 @@ let testNode = null;
 }
 
 // function to change website colours according to the flame test result
-
+let bunsenBurner = document.getElementById("bunsen-burner");
 function checkElement(){
     testNode = dragArea.querySelectorAll(".element")
     let rootCSS = document.documentElement.style
@@ -238,6 +240,8 @@ function checkElement(){
         rootCSS.setProperty('--text-colour', '#242027')
         rootCSS.setProperty('--light-accent', '#78A5A2')
         rootCSS.setProperty('--dark-accent', '#656757')
+        // change flame colour image
+        bunsenBurner.src = "images/bunsen-burner-copper.svg";
     }
 // potassium ions burn lilac
     if(testNode[0].className == "element potassium after-drag") {
@@ -246,6 +250,7 @@ function checkElement(){
         rootCSS.setProperty('--text-colour', '#8f4899')
         rootCSS.setProperty('--light-accent', '#c48c98')
         rootCSS.setProperty('--dark-accent', '#817590')
+        bunsenBurner.src = "images/bunsen-burner-potassium.svg";
     }
 // lithium ions burn crimson
     if(testNode[0].className == "element lithium after-drag") {
@@ -254,6 +259,7 @@ function checkElement(){
         rootCSS.setProperty('--text-colour', '#292230')
         rootCSS.setProperty('--light-accent', '#E89980')
         rootCSS.setProperty('--dark-accent', '#86849F')
+        bunsenBurner.src = "images/bunsen-burner-lithium.svg";
     }
 // sodium ions burn yellow
     if(testNode[0].className == "element sodium after-drag") {
@@ -262,6 +268,7 @@ function checkElement(){
         rootCSS.setProperty('--text-colour', '#4a3c4e')
         rootCSS.setProperty('--light-accent', '#7ca4b3')
         rootCSS.setProperty('--dark-accent', '#806157')
+        bunsenBurner.src = "images/bunsen-burner-sodium.svg";
     }
 
 

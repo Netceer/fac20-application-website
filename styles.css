@@ -449,7 +449,7 @@ for moving current slide to the left. CANT USE DISPLAY PROPERTY FOR ANIMATIONS!!
     width:70%;
 }
 
-.bunsen-burner {
+#bunsen-burner {
 max-width: 10rem;
 max-height: 10rem;
 }
@@ -471,4 +471,20 @@ border-style: dashed;
 
 .after-drag {
     border-radius: 50%;
+}
+
+.burn-away {
+    animation-name: burn-away-animation;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes burn-away-animation {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
 }
