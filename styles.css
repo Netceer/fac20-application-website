@@ -468,3 +468,7 @@ max-height: 10rem;
 .drag-hover-above-flame {
 border-style: dashed;
 }
+
+.after-drag {
+    border-radius: 50%;
+}

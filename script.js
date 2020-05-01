@@ -170,7 +170,8 @@ for (let i = 0; i < elements.length; i++) {
         // using clone fixes the big problem!!
         draggedItem = element.cloneNode(true);
         // setTimeout( () => draggedItem.style.display = "none", 0);
-    
+        element.classList.toggle("after-drag");
+        draggedItem.classList.toggle("after-drag")
     })
 
     // add event listener for drag end
@@ -181,7 +182,7 @@ for (let i = 0; i < elements.length; i++) {
             draggedItem.style.display = "block";
             draggedItem = null;
         }, 0);
-        
+        element.classList.toggle("after-drag");
     })
 
    
@@ -212,7 +213,6 @@ const dragArea = document.querySelector(".dragAreas");
         this.append(draggedItem);
         removeExtraElements();
         checkElement();
-        
     })
 
 //    make testNode null and let functions define variable so it only assigns elements dragged into flame
@@ -231,7 +231,7 @@ function checkElement(){
     testNode = dragArea.querySelectorAll(".element")
     let rootCSS = document.documentElement.style
     // copper ions burn green
-    if(testNode[0].className == "element copper") {
+    if(testNode[0].className == "element copper after-drag") {
         rootCSS.setProperty('--bg-colour', '#F1F0F3')
         rootCSS.setProperty('--main-colour', '#00DD6E')
         rootCSS.setProperty('--text-colour', '#242027')
@@ -239,7 +239,7 @@ function checkElement(){
         rootCSS.setProperty('--dark-accent', '#656757')
     }
 // potassium ions burn lilac
-    if(testNode[0].className == "element potassium") {
+    if(testNode[0].className == "element potassium after-drag") {
         rootCSS.setProperty('--bg-colour', '#f3f3eb')
         rootCSS.setProperty('--main-colour', '#C8A2C8')
         rootCSS.setProperty('--text-colour', '#8f4899')
@@ -247,7 +247,7 @@ function checkElement(){
         rootCSS.setProperty('--dark-accent', '#817590')
     }
 // lithium ions burn crimson
-    if(testNode[0].className == "element lithium") {
+    if(testNode[0].className == "element lithium after-drag") {
         rootCSS.setProperty('--bg-colour', '#F3EEEF')
         rootCSS.setProperty('--main-colour', '#DC143C')
         rootCSS.setProperty('--text-colour', '#292230')
@@ -255,7 +255,7 @@ function checkElement(){
         rootCSS.setProperty('--dark-accent', '#86849F')
     }
 // sodium ions burn yellow
-    if(testNode[0].className == "element sodium") {
+    if(testNode[0].className == "element sodium after-drag") {
         rootCSS.setProperty('--bg-colour', '#f0f2f0')
         rootCSS.setProperty('--main-colour', '#ffd064')
         rootCSS.setProperty('--text-colour', '#4a3c4e')
