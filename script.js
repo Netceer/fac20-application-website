@@ -1,4 +1,6 @@
-let slidesIndex, slides, dots, captionText
+// initCarousel function and declarations
+
+let slidesIndex, slides, dots, captionText;
 
 function initCarousel() {
     
@@ -35,22 +37,22 @@ function initCarousel() {
         // pushing the .dots span elements into the dots array
         dots.push(dot);
       
-    }
+    };
 
-    // adds the class .active to the currently shown slide number to colour it dark grey
+    // adds the class .active to the currently shown slide number to colour it
     dots[slidesIndex].classList.add("active");
  
 
 }
-initCarousel()
+initCarousel();
 
 // adding click event listener to the dots elements
-dots.map( (dotEle, index) => dotEle.addEventListener("click", () => moveSlides(index) ) )
+dots.map( (dotEle, index) => dotEle.addEventListener("click", () => moveSlides(index) ) );
 
 // next and previous button control
 function plusSlides(n) {
     moveSlides(slidesIndex + n);
-}
+};
 
 // event listeners for next and previous buttons
 let nextButton = document.querySelector(".next-button");
@@ -63,11 +65,12 @@ previousButton.addEventListener("click", () => plusSlides(-1) );
 function arrowKeyNavigation(e) {
     if(e.key === "ArrowRight") plusSlides(1);
     if(e.key === "ArrowLeft") plusSlides(-1);
-}
+};
 
 // event listener for left and right arrow keys are pressed
-document.addEventListener("keyup", arrowKeyNavigation)
+document.addEventListener("keyup", arrowKeyNavigation);
 
+// start of moveSlides function and declarations
 function moveSlides(n) {
 
     let i, currentSlide, nextSlide;
@@ -76,7 +79,7 @@ function moveSlides(n) {
     let moveSlideAnimationClass = {
         forCurrentSlide: "",
         forNextSlide: ""
-    }
+    };
 
     let slideCaptionAnimationClass;
 
@@ -131,7 +134,8 @@ function moveSlides(n) {
     captionText.innerText = slides[n].querySelector(".caption-text").innerText;
     captionText.style.display = "block";
 
-}
+};
+
 // Creating auto play image carousel
 let timer = 0;
 
@@ -152,19 +156,17 @@ function playPauseCarousel() {
         timer = 0;
         playPauseButtonIcon.className = ("fas fa-play");
     }
-}
+};
 
 // Adding event listener to the play and pause button
-let playPauseButton = document.getElementById("play-pause-button")
+let playPauseButton = document.getElementById("play-pause-button");
 playPauseButton.addEventListener("click", playPauseCarousel);
 
-// Flame test 
+// Flame test functionality
 const elements = document.querySelectorAll(".element");
-
-
 let draggedItem = null;
 
-// iterate through all elements 
+// code for element dragging, apply by iterating through all elements 
 for (let i = 0; i < elements.length; i++) {
     const element = elements[i];
     // add event listener for drag start
@@ -186,37 +188,38 @@ for (let i = 0; i < elements.length; i++) {
 
    
     
-}
+};
+
+// code for drag destination which is above the flame
 const dragArea = document.querySelector(".dragAreas");
 
-    // need event listeners to prevent default for dragover and dragenter
-    // add class toggles for class dragenter and dragleave
+// need event listeners to prevent default for dragover and dragenter
+// add class toggles for class dragenter and dragleave
 
-    dragArea.addEventListener("dragover", (e) => e.preventDefault());
+dragArea.addEventListener("dragover", (e) => e.preventDefault());
     
     
-    dragArea.addEventListener("dragenter", (e) => {
-        e.preventDefault();
-        dragArea.classList.toggle("drag-hover-above-flame");
-    });
+dragArea.addEventListener("dragenter", (e) => {
+    e.preventDefault();
+    dragArea.classList.toggle("drag-hover-above-flame");
+});
 
-    dragArea.addEventListener("dragleave", (e) => {
-        dragArea.classList.toggle("drag-hover-above-flame");
-    });
+dragArea.addEventListener("dragleave", (e) => {
+    dragArea.classList.toggle("drag-hover-above-flame");
+});
     
-    // event listener for drop
-    dragArea.addEventListener("drop", function(e){
-        dragArea.classList.toggle("drag-hover-above-flame");
-        // stop user dragging null elements into dragArea
-        if(draggedItem == null ) return;
-        
-        this.append(draggedItem);
-        removeExtraElements();
-        checkElement();
-        draggedItem.classList.add("burn-away");
-    })
+// event listener for drop
+dragArea.addEventListener("drop", function(e){
+    dragArea.classList.toggle("drag-hover-above-flame");
+    // stop user dragging null elements into dragArea
+    if(draggedItem == null ) return;
+    this.append(draggedItem);
+    removeExtraElements();
+    checkElement();
+    draggedItem.classList.add("burn-away");
+});
 
-//    make testNode null and let functions define variable so it only assigns elements dragged into flame
+//   make testNode null and let functions define variable so it only assigns elements dragged into flame
 let testNode = null;
  // function to only allow 1 element above flame
     function removeExtraElements(){
@@ -224,13 +227,14 @@ let testNode = null;
     if(testNode.length > 1 ) {
         testNode[0].remove()
     }
-}
+};
 
 // function to change website colours according to the flame test result
 let bunsenBurner = document.getElementById("bunsen-burner");
 function checkElement(){
     testNode = dragArea.querySelectorAll(".element")
     let rootCSS = document.documentElement.style
+
     // copper ions burn green
     if(testNode[0].className == "element copper after-drag") {
         rootCSS.setProperty('--bg-colour', '#F1F0F3')
@@ -241,7 +245,8 @@ function checkElement(){
         // change flame colour image
         bunsenBurner.src = "images/bunsen-burner-copper.svg";
     }
-// potassium ions burn lilac
+
+    // potassium ions burn lilac
     if(testNode[0].className == "element potassium after-drag") {
         rootCSS.setProperty('--bg-colour', '#f3f3eb')
         rootCSS.setProperty('--main-colour', '#C8A2C8')
@@ -250,7 +255,8 @@ function checkElement(){
         rootCSS.setProperty('--dark-accent', '#817590')
         bunsenBurner.src = "images/bunsen-burner-potassium.svg";
     }
-// lithium ions burn crimson
+
+    // lithium ions burn crimson
     if(testNode[0].className == "element lithium after-drag") {
         rootCSS.setProperty('--bg-colour', '#F3EEEF')
         rootCSS.setProperty('--main-colour', '#DC143C')
@@ -259,7 +265,8 @@ function checkElement(){
         rootCSS.setProperty('--dark-accent', '#86849F')
         bunsenBurner.src = "images/bunsen-burner-lithium.svg";
     }
-// sodium ions burn yellow
+
+    // sodium ions burn yellow
     if(testNode[0].className == "element sodium after-drag") {
         rootCSS.setProperty('--bg-colour', '#f0f2f0')
         rootCSS.setProperty('--main-colour', '#ffd064')
@@ -268,15 +275,12 @@ function checkElement(){
         rootCSS.setProperty('--dark-accent', '#806157')
         bunsenBurner.src = "images/bunsen-burner-sodium.svg";
     }
-
-
 }
 
 // code for the responsive navbar
-
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
-    // need to turn nodelist into an array to use map
+// need to turn nodelist into an array to use map
 const links = [...document.querySelectorAll(".nav-links li")];
 
 // add event listener to hamburger icon
@@ -288,12 +292,6 @@ hamburger.addEventListener("click", () => {
     links.map( link => {
         link.classList.toggle("opacity-one");
     })
-
-    // .forEach works on nodelist without any converting
-    // links.forEach(link => {
-    //     link.classList.toggle("opacity-one")
-    // })
-
 })
 
 // add event listener to close hamburger navbar when user clicks link
@@ -310,4 +308,4 @@ linkAnchor.map( (anchor) => anchor.addEventListener("click", () => {
             link.classList.toggle("opacity-one");
         });
     })
-)
+);
