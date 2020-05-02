@@ -224,7 +224,7 @@ img {
     color: var(--light-accent);
     padding: 0.5rem 0.8rem 0.5rem 1rem;
     transition: ease 0.5s;
-    z-index: 2;
+    z-index: 1;
     cursor: pointer;
     border-radius: 0rem 0rem 1rem 0rem;
    
