@@ -486,13 +486,14 @@ border-style: dashed;
 /* tablet screen sizes */
 @media only screen and (max-width: 768px) {
 
+    /* make the links display in column */
     #progress-links ul {
      display: flex;
      flex-direction: column;
         }
 
     #progress-links {
-        width:50%;
+        width:60%;
         margin: 0 auto;
     }
     
@@ -501,9 +502,20 @@ border-style: dashed;
     }
     
     #content-container {
-        margin-top: 6rem;
-        width: auto;
+        margin-top: 1rem;
     }
+
+    /* make width less than 100% so borders are not cutoff on smaller screen */
+    .section-paragraph {
+        margin: 0 auto;
+        width: 98%;
+    }
+
+    #image-carousel {
+        margin: 0 auto;
+        width: 98%;
+    }
+
     
     /* creating hamburger navbar icon */
     .line {
@@ -605,12 +617,32 @@ border-style: dashed;
     html {
         scroll-padding-top: 0.1rem;
     }
+
+    #content-container {
+        width: 100%;
+    }
 }
 
     
     /* smartphone screen sizes */
 @media only screen and (max-width: 480px) {
 
+    #progress-links ul {
+        display: flex;
+        flex-direction: column;
+           }
+   
+        #progress-links {
+           width: 75%;
+           margin: 0 auto;
+        }
+ 
+       /* make link icon and text display in column */
+       .progress-link {
+           flex-direction: column;
+           padding-bottom: 1.5rem;
+           font-size: 2.5rem;
+       }
 }
 
 
