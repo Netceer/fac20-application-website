@@ -24,6 +24,9 @@ html {
     display: flex;
     flex-direction: column;
     background-color: var(--bg-colour);
+    
+    /* need this to offset nav links covering headers due to it being position fixed!! */
+    scroll-padding-top: 5.5rem;
 }
 
 #nav-bar {
@@ -51,6 +54,7 @@ html {
     border: solid transparent 0.5rem;
     transition: color 0.7s;
 }
+
 
 .nav-link:hover {
     color: var(--light-accent);
@@ -587,6 +591,12 @@ border-style: dashed;
         font-size: 3.3rem;
     }
 
+    /* make navbar only take up hamburger icon size 
+    so it doesnt cover headers when links are used */
+    #nav-bar {
+        width: 100%;
+        right: 0;
+    }
 }
     
     /* smartphone screen sizes */
