@@ -24,7 +24,7 @@ html {
     display: flex;
     flex-direction: column;
     background-color: var(--bg-colour);
-    
+
     /* need this to offset nav links covering headers due to it being position fixed!! */
     scroll-padding-top: 5.5rem;
 }
@@ -537,11 +537,11 @@ border-style: dashed;
 
         /* using clip path to create a mask for animation, 
         setting the circle to be top right outside of screen */
-        clip-path: circle(10rem at 90% -10%);
+        clip-path: circle(10rem at 110% -5%);
 
         /* use webkit for better clip-path support on more browsers */
-        -webkit-clip-path: circle(10rem at 90% -10%);
-        transition: all 1s ease-out;
+        -webkit-clip-path: circle(10rem at 110% -5%);
+        transition: all 0.5s ease-out;
 
         /* stop pointer events so users cant accidently click stuff behind navbar */
         pointer-events: none;
@@ -550,8 +550,8 @@ border-style: dashed;
     /* targetting nav-links class elements that contain .open class */
     .nav-links.open {
         /* size of circle mask to fill whole screen */
-        clip-path: circle(200rem at 90% -10%);
-        -webkit-clip-path: circle(200rem at 90% -10%);
+        clip-path: circle(200rem at 110% -5%);
+        -webkit-clip-path: circle(200rem at 110% -5%);
         pointer-events: all;
     }
 
@@ -564,23 +564,23 @@ border-style: dashed;
 
 
     .nav-links li:nth-child(1) {
-        transition: all 0.5s ease 0.2s;
+        transition: all 0.4s ease 0.2s;
     }
 
     .nav-links li:nth-child(2) {
-        transition: all 0.5s ease 0.4s;
+        transition: all 0.4s ease 0.3s;
     }
 
     .nav-links li:nth-child(3) {
-        transition: all 0.5s ease 0.6s;
+        transition: all 0.4s ease 0.4s;
     }
 
     .nav-links li:nth-child(4) {
-        transition: all 0.5s ease 0.8s;
+        transition: all 0.4s ease 0.5s;
     }
 
     .nav-links li:nth-child(5) {
-        transition: all 0.5s ease 1s;
+        transition: all 0.4s ease 0.6s;
     }
 
     .nav-links li.opacity-one {
@@ -594,8 +594,12 @@ border-style: dashed;
     /* make navbar only take up hamburger icon size 
     so it doesnt cover headers when links are used */
     #nav-bar {
-        width: 100%;
+        width: auto;
         right: 0;
+        border-radius: 0.5rem;
+    }
+    html {
+        scroll-padding-top: 0.1rem;
     }
 }
     
