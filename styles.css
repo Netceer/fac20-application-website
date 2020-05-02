@@ -153,10 +153,6 @@ img {
     height: 100%;
 }
 
-.caption-text {
-    display: none;
-}
-
 .previous-button, .next-button {
     padding: 1.6rem 1.6rem 1.6rem 1rem;
     color: var(--main-colour);
