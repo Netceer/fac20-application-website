@@ -169,7 +169,6 @@ for (let i = 0; i < elements.length; i++) {
     const element = elements[i];
     // add event listener for drag start
     element.addEventListener("dragstart", function (){
-        console.log("drag start");
         // using clone fixes the big problem!!
         draggedItem = element.cloneNode(true);
         // setTimeout( () => draggedItem.style.display = "none", 0);
@@ -180,12 +179,8 @@ for (let i = 0; i < elements.length; i++) {
 
     // add event listener for drag end
     element.addEventListener("dragend", function (){
-        console.log("drag end");
-
-        setTimeout( () => {
-            draggedItem.style.display = "block";
-            draggedItem = null;
-        }, 0);
+        draggedItem.style.display = "block";
+        draggedItem = null;
         element.classList.toggle("after-drag");
     })
 
@@ -193,8 +188,6 @@ for (let i = 0; i < elements.length; i++) {
     
 }
 const dragArea = document.querySelector(".dragAreas");
-
-
 
     // need event listeners to prevent default for dragover and dragenter
     // add class toggles for class dragenter and dragleave
@@ -214,9 +207,9 @@ const dragArea = document.querySelector(".dragAreas");
     // event listener for drop
     dragArea.addEventListener("drop", function(e){
         dragArea.classList.toggle("drag-hover-above-flame");
-        console.log("drop");
         // stop user dragging null elements into dragArea
         if(draggedItem == null ) return;
+        
         this.append(draggedItem);
         removeExtraElements();
         checkElement();

@@ -515,7 +515,6 @@ max-height: 10rem;
         background-color: var(--main-colour);
         flex-direction: column;
         align-items: center;
-        /* display: none; */
 
         /* using clip path to create a mask for animation, 
         setting the circle to be top right outside of screen */
