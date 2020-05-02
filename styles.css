@@ -505,11 +505,6 @@ border-style: dashed;
         width: auto;
     }
     
-    
-    #flame-test {
-        display: none;
-    }
-        
     /* creating hamburger navbar icon */
     .line {
         width: 3rem;
@@ -555,6 +550,16 @@ border-style: dashed;
         pointer-events: all;
     }
 
+/* hide flame test element and navbar link */
+
+    #flame-test {
+        display: none;
+        
+    }
+    
+    .nav-links li:nth-child(1) {
+        display: none;
+    }
     /* creating fade in animations for navbar links
     using nth-child selector to target each link anchor separately */
 
@@ -562,24 +567,23 @@ border-style: dashed;
         opacity: 0;
     }
 
-
-    .nav-links li:nth-child(1) {
+    .nav-links li:nth-child(2) {
         transition: all 0.4s ease 0.2s;
     }
 
-    .nav-links li:nth-child(2) {
+    .nav-links li:nth-child(3) {
         transition: all 0.4s ease 0.3s;
     }
 
-    .nav-links li:nth-child(3) {
+    .nav-links li:nth-child(4) {
         transition: all 0.4s ease 0.4s;
     }
 
-    .nav-links li:nth-child(4) {
+    .nav-links li:nth-child(5) {
         transition: all 0.4s ease 0.5s;
     }
 
-    .nav-links li:nth-child(5) {
+    .nav-links li:nth-child(6) {
         transition: all 0.4s ease 0.6s;
     }
 
@@ -602,11 +606,19 @@ border-style: dashed;
         scroll-padding-top: 0.1rem;
     }
 }
+
     
     /* smartphone screen sizes */
 @media only screen and (max-width: 480px) {
 
 }
 
+
+@media only screen and (max-width: 900px) {
+    /* reduce navbar margin to not overlap content  */
+    .nav-link {
+        margin: 0.7rem 1rem;
+    }
+}
     /* end of media queries */
 
