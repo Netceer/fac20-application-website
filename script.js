@@ -280,16 +280,16 @@ function checkElement(){
 
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
-const links = document.querySelectorAll(".nav-links li");
+    // need to turn nodelist into an array to use map
+const links = [...document.querySelectorAll(".nav-links li")];
 
 // add event listener to hamburger icon
 hamburger.addEventListener("click", () => {
     navLinks.classList.toggle("open");
 
     // add opacity-one class to each link anchor
-    // need to turn nodelist into an array to use map
-    let linksArr = [...links];
-    linksArr.map( link => {
+
+    links.map( link => {
         link.classList.toggle("opacity-one");
     })
 
@@ -299,3 +299,19 @@ hamburger.addEventListener("click", () => {
     // })
 
 })
+
+// add event listener to close hamburger navbar when user clicks link
+const linkAnchor = [...document.querySelectorAll(".nav-link")];
+
+// iterate through anchors to close hamburger menu along with correct animations
+
+linkAnchor.map( (anchor) => anchor.addEventListener("click", () => {
+    // closes hamburger navbar
+    navLinks.classList.remove("open");
+
+    // have to iterate through each link to toggle class just like in hamburger event listerner
+    links.map( link => {
+            link.classList.toggle("opacity-one");
+        });
+    })
+)
