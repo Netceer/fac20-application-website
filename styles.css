@@ -667,4 +667,15 @@ otherwise touch devices end up with sticky hover css effects */
 
 }
 
+/* if user is on device that cant click and drag then hide flame test at all screen sizes  */
+@media (any-pointer: coarse) {
+
+    #flame-test {
+        display: none;
+    }
+    
+    .nav-links li:nth-child(1) {
+        display: none;
+    }
+}
 /* end of media queries */
