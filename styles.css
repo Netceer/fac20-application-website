@@ -70,7 +70,9 @@ h1 {
 p {
     font-size: 1.8rem;
     line-height: 1.5;
+    margin-bottom: 2rem;
 }
+
 .section-header {
     position: relative;
     left: 1.5rem;
@@ -86,7 +88,7 @@ p {
 .section-paragraph {
     transform: translateY(-1.9rem);
     border-radius: 0.5rem;
-    padding: 3rem 2rem 2rem 2rem;
+    padding: 3rem 2rem 0rem 2rem;
     z-index: -1;
     border:solid var(--text-colour) 0.2rem;
     color: var(--text-colour);
