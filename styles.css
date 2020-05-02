@@ -56,10 +56,7 @@ html {
 }
 
 
-.nav-link:hover {
-    color: var(--light-accent);
-    border-bottom: solid var(--light-accent) 0.5rem;
-}
+
 
 
 #content-container {
@@ -120,10 +117,7 @@ p {
 }
 
 
-.progress-link:hover {
-    color: var(--light-accent);
-    transform: translateY(5%);
-}
+
 
 .iconify {
     font-size: 5rem;
@@ -190,24 +184,13 @@ img {
     padding: 1.6rem 1rem 1.6rem 1.6rem;
 }
 
-/* hover effect on navigation buttons  */
-.previous-button:hover, .next-button:hover {
-    background-color: var(--main-colour);
-    background-color: var(--light-accent);
-    color: var(--main-colour);
-    cursor: pointer;
-    opacity: 0.7;
 
-}
 
 /* changing opacity of arrow icons  */
 .fas {
     opacity: 0.7;
 }
-/* hovering the buttons will also increase opacity of the arrow icon */
-.previous-button:hover .fas, .next-button .fas{
-    opacity: 1;
-}
+
 
 .caption-container {
     position: absolute;
@@ -247,16 +230,7 @@ img {
    
 }
 
-#play-pause-button:hover {
-    background-color: var(--light-accent);
-    color: var(--main-colour);
-    cursor: pointer;
-    opacity: 0.7;
-}
 
-#play-pause-button:hover .fas {
-    opacity: 1;
-}
 
 #dots-container {
     display: flex;
@@ -283,7 +257,9 @@ img {
     transform: translateY(-25%);
 }
 
-.dots:hover, .dots.active {
+
+
+.dots.active {
     background-color: var(--main-colour); 
 }
 
@@ -459,9 +435,7 @@ max-height: 10rem;
     margin-bottom: 1rem;
 }
 
-.drag-hover-above-flame {
-border-style: dashed;
-}
+
 
 .after-drag {
     border-radius: 50%;
@@ -659,5 +633,56 @@ border-style: dashed;
         margin: 0.7rem 1rem;
     }
 }
-    /* end of media queries */
+    
+/* 
+all hover events, need to only turn on for devices that support hover,
+otherwise touch devices end up with sticky hover css effects */
 
+@media (hover: hover) {
+    .nav-link:hover {
+        color: var(--light-accent);
+        border-bottom: solid var(--light-accent) 0.5rem;
+    }
+    
+    .progress-link:hover {
+        color: var(--light-accent);
+        transform: translateY(5%);
+    }
+    
+    /* hover effect on navigation buttons  */
+    .previous-button:hover, .next-button:hover {
+        background-color: var(--main-colour);
+        background-color: var(--light-accent);
+        color: var(--main-colour);
+        cursor: pointer;
+        opacity: 0.7;
+    
+    }
+    
+    /* hovering the buttons will also increase opacity of the arrow icon */
+    .previous-button:hover .fas, .next-button .fas{
+        opacity: 1;
+    }
+    
+    #play-pause-button:hover {
+        background-color: var(--light-accent);
+        color: var(--main-colour);
+        cursor: pointer;
+        opacity: 0.7;
+    }
+    
+    #play-pause-button:hover .fas {
+        opacity: 1;
+    }
+    
+    .dots:hover {
+        background-color: var(--main-colour); 
+    }
+    
+    .drag-hover-above-flame {
+    border-style: dashed;
+    }
+
+}
+
+/* end of media queries */
