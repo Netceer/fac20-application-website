@@ -137,12 +137,14 @@ p {
     overflow: hidden;
     position: relative;
 }
+
 .image-and-caption {
     width: 100%;
     height: 100%;
     opacity: 0;
     position: absolute;
 }
+
 img {
     /* need to set to 100% otherwise all images will appear due to difference in sizes */
     width: 100%;
