@@ -91,7 +91,7 @@ function moveSlides(n) {
         // slide text in from top when moving to the right
         slideCaptionAnimationClass = "slide-caption-from-top";
 
-     } // user clicked on previous navigation button
+     } // user clicked on previous navigation button, setting all correct aniimation classes ready to apply
     else if (n < slidesIndex){
 
         // this will loop back over to the last slide
@@ -102,6 +102,7 @@ function moveSlides(n) {
         slideCaptionAnimationClass = "slide-caption-from-bottom";
     }
 
+    // user selected am image that is different from current one, applies all preset animation classes from previous if statements
     if(n != slidesIndex){
         currentSlide = slides[slidesIndex];
         nextSlide = slides[n]
@@ -119,6 +120,8 @@ function moveSlides(n) {
         currentSlide.classList.add(moveSlideAnimationClass.forCurrentSlide);
         nextSlide.classList.add(moveSlideAnimationClass.forNextSlide);
         dots[n].classList.add("active");
+
+        // finally sets slidesIndex to n so it now equals ready for next input
         slidesIndex = n;
     }
 
