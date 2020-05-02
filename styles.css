@@ -537,10 +537,10 @@ border-style: dashed;
 
         /* using clip path to create a mask for animation, 
         setting the circle to be top right outside of screen */
-        clip-path: circle(10rem at 110% -5%);
+        clip-path: circle(10rem at 110% -10%);
 
         /* use webkit for better clip-path support on more browsers */
-        -webkit-clip-path: circle(10rem at 110% -5%);
+        -webkit-clip-path: circle(10rem at 110% -10%);
         transition: all 0.5s ease-out;
 
         /* stop pointer events so users cant accidently click stuff behind navbar */
@@ -550,8 +550,8 @@ border-style: dashed;
     /* targetting nav-links class elements that contain .open class */
     .nav-links.open {
         /* size of circle mask to fill whole screen */
-        clip-path: circle(200rem at 110% -5%);
-        -webkit-clip-path: circle(200rem at 110% -5%);
+        clip-path: circle(200rem at 110% -10%);
+        -webkit-clip-path: circle(200rem at 110% -10%);
         pointer-events: all;
     }
 
