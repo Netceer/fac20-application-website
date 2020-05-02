@@ -607,6 +607,25 @@ for moving current slide to the left.*/
         padding-bottom: 1.5rem;
         font-size: 2.5rem;
     }
+    
+    /* resize the image carousel so images aren't so squished */
+    img {
+        min-height: 300px;
+        height: auto;
+    }
+
+    .carousel-container {
+        height: 35rem;
+    }
+    
+    .images-container {
+        height: 85%;
+    }
+        
+    #dots-container {
+        height: 15%;
+    }
+
 }
 
 
