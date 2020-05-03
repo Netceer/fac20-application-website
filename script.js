@@ -305,7 +305,7 @@ linkAnchor.map( (anchor) => anchor.addEventListener("click", () => {
 
     // have to iterate through each link to toggle class just like in hamburger event listerner
     links.map( link => {
-            link.classList.toggle("opacity-one");
+            link.classList.remove("opacity-one");
         });
     })
 );
